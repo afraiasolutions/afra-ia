@@ -13,7 +13,8 @@ import {
   Users,
   Clock,
   ShieldCheck,
-  Send
+  Send,
+  Play
 } from 'lucide-react';
 
 const translations = {
@@ -223,7 +224,17 @@ function App() {
       {/* Services Section */}
       <section id="services" className="services">
         <div className="container">
-          <div className="section-header">
+          {/* Animated Video Section */}
+          <div className="video-section animate-fade-in" onClick={() => alert(lang === 'es' ? "Aquí iría el video generado con IA de la persona explicando por qué elegirnos." : "Here goes the AI-generated video of the person explaining why to choose us.")}>
+            <img src="/video-thumbnail.png" alt="Video presentation thumbnail" className="video-thumbnail" />
+            <div className="video-overlay">
+              <div className="play-button">
+                <Play size={40} fill="white" style={{ marginLeft: '5px' }} />
+              </div>
+            </div>
+          </div>
+
+          <div className="section-header" style={{ marginTop: '4rem' }}>
             <h2>{t.servicesTitle}</h2>
             <p>{t.servicesDesc}</p>
           </div>
