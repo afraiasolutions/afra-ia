@@ -17,7 +17,8 @@ import {
   Target,
   Search,
   BarChart3,
-  Mail
+  Mail,
+  Play
 } from 'lucide-react';
 
 const translations = {
