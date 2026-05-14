@@ -14,7 +14,10 @@ import {
   Clock,
   ShieldCheck,
   Send,
-  Play
+  Target,
+  Search,
+  BarChart3,
+  Mail
 } from 'lucide-react';
 
 const translations = {
@@ -67,7 +70,15 @@ const translations = {
     formMessage: "How can we help you?",
     formSubmit: "Send Message",
     footerText: "© 2024 AFRA Business Solutions. All rights reserved.",
-    footerLinks: "Privacy Policy | Terms of Service"
+    footerLinks: "Privacy Policy | Terms of Service",
+    navPricing: "Plans",
+    pricingTitle: "Investment Plans",
+    pricingDesc: "We focus on real transformations and measurable objectives for your business. Choose the path that fits your goals.",
+    pricingIncludes: "Includes:",
+    pricingMetrics: "Key Metrics:",
+    pricingSuggest: "Suggested Price:",
+    upsellsTitle: "🧩 Modular Services (Upsells)",
+    upsellsDesc: "Here is where the magic happens. Enhance your strategy with these powerful add-ons."
   },
   es: {
     navHome: "Inicio",
@@ -118,8 +129,118 @@ const translations = {
     formMessage: "¿Cómo podemos ayudarte?",
     formSubmit: "Enviar Mensaje",
     footerText: "© 2024 AFRA Business Solutions. Todos los derechos reservados.",
-    footerLinks: "Política de Privacidad | Términos de Servicio"
+    footerLinks: "Política de Privacidad | Términos de Servicio",
+    navPricing: "Planes",
+    pricingTitle: "Planes de Inversión",
+    pricingDesc: "Nos enfocamos en transformaciones reales y objetivos medibles para tu negocio. Elige el camino que se adapte a tus metas.",
+    pricingIncludes: "Incluye:",
+    pricingMetrics: "Métricas:",
+    pricingSuggest: "Precio sugerido:",
+    upsellsTitle: "🧩 Servicios Modulares (Upsells)",
+    upsellsDesc: "Acá está la magia. Potencia tu estrategia con estos módulos adicionales."
   }
+};
+
+const plansData = {
+  en: [
+    {
+      id: "pack1",
+      name: "🟢 PACK 1 — CONTENT BOOST",
+      goal: "Ideal for businesses wanting an active digital presence.",
+      price: "USD 300–700",
+      includes: [
+        "15 monthly videos", "Professional editing", "Viral hooks", "Captions copy", "Social media posting", "5 weekly stories", "Basic monthly report"
+      ],
+      metrics: [
+        "Reach", "Views", "Engagement", "New followers", "Best video of the month"
+      ]
+    },
+    {
+      id: "pack2",
+      name: "🟡 PACK 2 — SOCIAL GROWTH",
+      goal: "Designed to generate inquiries and establish authority.",
+      price: "USD 800–1800",
+      includes: [
+        "25 monthly videos", "Content strategy", "Trend research", "Monthly calendar", "Basic community management", "Message responses", "10 graphic designs", "Daily stories", "Profile optimization"
+      ],
+      metrics: [
+        "Video retention", "CTR", "Engagement rate", "Leads generated", "Messages received", "Monthly growth"
+      ],
+      popular: true
+    },
+    {
+      id: "pack3",
+      name: "🔴 PACK 3 — DOMINATION SYSTEM",
+      goal: "Complete client acquisition system.",
+      price: "USD 2500–7000+",
+      includes: [
+        "40 monthly videos", "Premium production", "Full strategy", "Sales funnel", "AI Automations", "CRM", "Landing page", "Meta Ads", "Google Ads", "Email marketing", "Lead tracking", "Analytics dashboard"
+      ],
+      metrics: [
+        "CPL", "CAC", "ROAS", "Conversions", "Sales", "ROI", "Full funnel"
+      ]
+    }
+  ],
+  es: [
+    {
+      id: "pack1",
+      name: "🟢 PACK 1 — CONTENT BOOST",
+      goal: "Ideal para negocios que quieren presencia y redes activas.",
+      price: "USD 300–700",
+      includes: [
+        "15 videos mensuales", "Edición profesional", "Hooks virales", "Copies para captions", "Subida a redes", "5 historias semanales", "Reporte básico mensual"
+      ],
+      metrics: [
+        "Alcance", "Visualizaciones", "Engagement", "Seguidores nuevos", "Mejor video del mes"
+      ]
+    },
+    {
+      id: "pack2",
+      name: "🟡 PACK 2 — SOCIAL GROWTH",
+      goal: "Pensado para generar consultas y autoridad.",
+      price: "USD 800–1800",
+      includes: [
+        "25 videos mensuales", "Estrategia de contenido", "Investigación de tendencias", "Calendario mensual", "Community management básico", "Respuesta de mensajes", "10 diseños gráficos", "Stories diarias", "Optimización del perfil"
+      ],
+      metrics: [
+        "Retención de videos", "CTR", "Engagement rate", "Leads generados", "Mensajes recibidos", "Crecimiento mensual"
+      ],
+      popular: true
+    },
+    {
+      id: "pack3",
+      name: "🔴 PACK 3 — DOMINATION SYSTEM",
+      goal: "Sistema completo de adquisición de clientes.",
+      price: "USD 2500–7000+",
+      includes: [
+        "40 videos mensuales", "Producción premium", "Estrategia completa", "Funnel de ventas", "IA para automatizaciones", "CRM", "Landing page", "Meta Ads", "Google Ads", "Email marketing", "Seguimiento de leads", "Dashboard analytics"
+      ],
+      metrics: [
+        "CPL", "CAC", "ROAS", "Conversiones", "Ventas", "ROI", "Embudo completo"
+      ]
+    }
+  ]
+};
+
+const modularServices = {
+  en: [
+    { icon: "Layout", name: "Landing Page", desc: "Design + copy + forms, Meta Pixel + Analytics", price: "USD 400–1500" },
+    { icon: "MessageCircle", name: "WhatsApp AI Automation", desc: "Auto-replies, Lead capture, Follow-ups", price: "USD 200–1000" },
+    { icon: "Target", name: "Meta Ads Setup", desc: "Campaign setup, Audiences, Pixel, Initial testing", price: "USD 300–1200" },
+    { icon: "Search", name: "Google Ads Setup", desc: "Search ads, Keywords, Conversion tracking", price: "USD 400–1500" },
+    { icon: "BarChart3", name: "Dashboard Analytics", desc: "Leads, sales, reach, conversions, campaigns", price: "USD 100–500 setup + monthly" },
+    { icon: "Users", name: "CRM + Pipeline", desc: "Client tracking system", price: "USD 300–2000" },
+    { icon: "Mail", name: "Email Marketing", desc: "Automated flows, Lead recovery, Remarketing", price: "USD 150–700" }
+  ],
+  es: [
+    { icon: "Layout", name: "Landing Page", desc: "Diseño + copy + formularios, Pixel Meta + Analytics", price: "USD 400–1500" },
+    { icon: "MessageCircle", name: "Automatización WhatsApp IA", desc: "Respuestas automáticas, Captura de leads, Seguimiento", price: "USD 200–1000" },
+    { icon: "Target", name: "Meta Ads Setup", desc: "Configuración campañas, Públicos, Pixel, Testing inicial", price: "USD 300–1200" },
+    { icon: "Search", name: "Google Ads Setup", desc: "Search ads, Keywords, Conversion tracking", price: "USD 400–1500" },
+    { icon: "BarChart3", name: "Dashboard Analytics", desc: "Leads, ventas, alcance, conversiones, campañas", price: "USD 100–500 setup + mensual" },
+    { icon: "Users", name: "CRM + Pipeline", desc: "Sistema de seguimiento de clientes", price: "USD 300–2000" },
+    { icon: "Mail", name: "Email Marketing", desc: "Flujos automáticos, Recuperación de leads, Remarketing", price: "USD 150–700" }
+  ]
 };
 
 function App() {
@@ -145,6 +266,16 @@ function App() {
     window.open(`https://wa.me/1234567890?text=${encodeURIComponent(message)}`, '_blank');
   };
 
+  const iconMap = {
+    Layout: <Layout size={24} />,
+    MessageCircle: <MessageCircle size={24} />,
+    Target: <Target size={24} />,
+    Search: <Search size={24} />,
+    BarChart3: <BarChart3 size={24} />,
+    Users: <Users size={24} />,
+    Mail: <Mail size={24} />
+  };
+
   return (
     <>
       {/* Navbar */}
@@ -160,6 +291,7 @@ function App() {
           <div className="nav-links">
             <a href="#" className="nav-link">{t.navHome}</a>
             <a href="#services" className="nav-link">{t.navServices}</a>
+            <a href="#pricing" className="nav-link">{t.navPricing}</a>
             <a href="#why-us" className="nav-link">{t.navWhyUs}</a>
             <a href="#contact" className="nav-link">{t.navContact}</a>
             <button className="lang-switch" onClick={toggleLanguage}>
@@ -292,6 +424,74 @@ function App() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="pricing" className="pricing">
+        <div className="container">
+          <div className="section-header">
+            <h2>{t.pricingTitle}</h2>
+            <p>{t.pricingDesc}</p>
+          </div>
+
+          <div className="pricing-grid">
+            {plansData[lang].map((plan) => (
+              <div key={plan.id} className={`pricing-card ${plan.popular ? 'popular' : ''}`}>
+                {plan.popular && <div className="popular-badge">Top Choice</div>}
+                <h3>{plan.name}</h3>
+                <p className="pricing-goal">{plan.goal}</p>
+                <div className="pricing-price">
+                  <span>{t.pricingSuggest}</span>
+                  <h4>{plan.price}</h4>
+                </div>
+                
+                <div className="pricing-details">
+                  <div className="pricing-section">
+                    <h5>{t.pricingIncludes}</h5>
+                    <ul>
+                      {plan.includes.map((item, i) => (
+                        <li key={i}><CheckCircle2 size={16} className="text-accent" /> {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="pricing-section">
+                    <h5>{t.pricingMetrics}</h5>
+                    <ul>
+                      {plan.metrics.map((item, i) => (
+                        <li key={i}><TrendingUp size={16} className="text-accent" /> {item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <button className={`btn ${plan.popular ? 'btn-primary' : 'btn-outline'}`} onClick={openWhatsApp} style={{width: '100%', marginTop: '2rem'}}>
+                  {t.btnContact}
+                </button>
+              </div>
+            ))}
+          </div>
+
+          {/* Upsells */}
+          <div className="upsells-container">
+            <div className="upsells-header">
+              <h3>{t.upsellsTitle}</h3>
+              <p>{t.upsellsDesc}</p>
+            </div>
+            <div className="upsells-grid">
+              {modularServices[lang].map((service, idx) => (
+                <div key={idx} className="upsell-card">
+                  <div className="upsell-icon">
+                    {iconMap[service.icon]}
+                  </div>
+                  <div className="upsell-content">
+                    <h4>{service.name}</h4>
+                    <p>{service.desc}</p>
+                    <span className="upsell-price">{service.price}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Us Section */}
       <section id="why-us" className="why-us">
         <div className="container">
@@ -365,6 +565,7 @@ function App() {
           <div className="footer-links">
             <a href="#" className="nav-link">{t.navHome}</a>
             <a href="#services" className="nav-link">{t.navServices}</a>
+            <a href="#pricing" className="nav-link">{t.navPricing}</a>
             <a href="#why-us" className="nav-link">{t.navWhyUs}</a>
           </div>
           <p style={{ fontSize: '0.85rem' }}>{t.footerText}</p>
