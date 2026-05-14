@@ -148,7 +148,7 @@ const plansData = {
       id: "pack1",
       name: "🟢 PACK 1 — CONTENT BOOST",
       goal: "Ideal for businesses wanting an active digital presence.",
-      price: "USD 300–700",
+      price: "USD 700",
       includes: [
         "15 monthly videos", "Professional editing", "Viral hooks", "Captions copy", "Social media posting", "5 weekly stories", "Basic monthly report"
       ],
@@ -160,7 +160,7 @@ const plansData = {
       id: "pack2",
       name: "🟡 PACK 2 — SOCIAL GROWTH",
       goal: "Designed to generate inquiries and establish authority.",
-      price: "USD 800–1800",
+      price: "USD 1100",
       includes: [
         "25 monthly videos", "Content strategy", "Trend research", "Monthly calendar", "Basic community management", "Message responses", "10 graphic designs", "Daily stories", "Profile optimization"
       ],
@@ -173,7 +173,7 @@ const plansData = {
       id: "pack3",
       name: "🔴 PACK 3 — DOMINATION SYSTEM",
       goal: "Complete client acquisition system.",
-      price: "USD 2500–7000+",
+      price: "USD 1800",
       includes: [
         "40 monthly videos", "Premium production", "Full strategy", "Sales funnel", "AI Automations", "CRM", "Landing page", "Meta Ads", "Google Ads", "Email marketing", "Lead tracking", "Analytics dashboard"
       ],
@@ -187,7 +187,7 @@ const plansData = {
       id: "pack1",
       name: "🟢 PACK 1 — CONTENT BOOST",
       goal: "Ideal para negocios que quieren presencia y redes activas.",
-      price: "USD 300–700",
+      price: "Start at USD 700",
       includes: [
         "15 videos mensuales", "Edición profesional", "Hooks virales", "Copies para captions", "Subida a redes", "5 historias semanales", "Reporte básico mensual"
       ],
@@ -199,7 +199,7 @@ const plansData = {
       id: "pack2",
       name: "🟡 PACK 2 — SOCIAL GROWTH",
       goal: "Pensado para generar consultas y autoridad.",
-      price: "USD 800–1800",
+      price: "Start at USD 1100",
       includes: [
         "25 videos mensuales", "Estrategia de contenido", "Investigación de tendencias", "Calendario mensual", "Community management básico", "Respuesta de mensajes", "10 diseños gráficos", "Stories diarias", "Optimización del perfil"
       ],
@@ -212,7 +212,7 @@ const plansData = {
       id: "pack3",
       name: "🔴 PACK 3 — DOMINATION SYSTEM",
       goal: "Sistema completo de adquisición de clientes.",
-      price: "USD 2500–7000+",
+      price: "Start at USD 1800",
       includes: [
         "40 videos mensuales", "Producción premium", "Estrategia completa", "Funnel de ventas", "IA para automatizaciones", "CRM", "Landing page", "Meta Ads", "Google Ads", "Email marketing", "Seguimiento de leads", "Dashboard analytics"
       ],
@@ -225,22 +225,22 @@ const plansData = {
 
 const modularServices = {
   en: [
-    { icon: "Layout", name: "Landing Page", desc: "Design + copy + forms, Meta Pixel + Analytics", price: "USD 400–1500" },
-    { icon: "MessageCircle", name: "WhatsApp AI Automation", desc: "Auto-replies, Lead capture, Follow-ups", price: "USD 200–1000" },
-    { icon: "Target", name: "Meta Ads Setup", desc: "Campaign setup, Audiences, Pixel, Initial testing", price: "USD 300–1200" },
-    { icon: "Search", name: "Google Ads Setup", desc: "Search ads, Keywords, Conversion tracking", price: "USD 400–1500" },
-    { icon: "BarChart3", name: "Dashboard Analytics", desc: "Leads, sales, reach, conversions, campaigns", price: "USD 100–500 setup + monthly" },
-    { icon: "Users", name: "CRM + Pipeline", desc: "Client tracking system", price: "USD 300–2000" },
-    { icon: "Mail", name: "Email Marketing", desc: "Automated flows, Lead recovery, Remarketing", price: "USD 150–700" }
+    { icon: "Layout", name: "Landing Page", desc: "Design + copy + forms, Meta Pixel + Analytics", price: "Consult" },
+    { icon: "MessageCircle", name: "WhatsApp AI Automation", desc: "Auto-replies, Lead capture, Follow-ups", price: "Consult" },
+    { icon: "Target", name: "Meta Ads Setup", desc: "Campaign setup, Audiences, Pixel, Initial testing", price: "Consult" },
+    { icon: "Search", name: "Google Ads Setup", desc: "Search ads, Keywords, Conversion tracking", price: "Consult" },
+    { icon: "BarChart3", name: "Dashboard Analytics", desc: "Leads, sales, reach, conversions, campaigns", price: "Consult" },
+    { icon: "Users", name: "CRM + Pipeline", desc: "Client tracking system", price: "Consult" },
+    { icon: "Mail", name: "Email Marketing", desc: "Automated flows, Lead recovery, Remarketing", price: "Consult" }
   ],
   es: [
-    { icon: "Layout", name: "Landing Page", desc: "Diseño + copy + formularios, Pixel Meta + Analytics", price: "USD 400–1500" },
-    { icon: "MessageCircle", name: "Automatización WhatsApp IA", desc: "Respuestas automáticas, Captura de leads, Seguimiento", price: "USD 200–1000" },
-    { icon: "Target", name: "Meta Ads Setup", desc: "Configuración campañas, Públicos, Pixel, Testing inicial", price: "USD 300–1200" },
-    { icon: "Search", name: "Google Ads Setup", desc: "Search ads, Keywords, Conversion tracking", price: "USD 400–1500" },
-    { icon: "BarChart3", name: "Dashboard Analytics", desc: "Leads, ventas, alcance, conversiones, campañas", price: "USD 100–500 setup + mensual" },
-    { icon: "Users", name: "CRM + Pipeline", desc: "Sistema de seguimiento de clientes", price: "USD 300–2000" },
-    { icon: "Mail", name: "Email Marketing", desc: "Flujos automáticos, Recuperación de leads, Remarketing", price: "USD 150–700" }
+    { icon: "Layout", name: "Landing Page", desc: "Diseño + copy + formularios, Pixel Meta + Analytics", price: "Consultar" },
+    { icon: "MessageCircle", name: "Automatización WhatsApp IA", desc: "Respuestas automáticas, Captura de leads, Seguimiento", price: "Consultar" },
+    { icon: "Target", name: "Meta Ads Setup", desc: "Configuración campañas, Públicos, Pixel, Testing inicial", price: "Consultar" },
+    { icon: "Search", name: "Google Ads Setup", desc: "Search ads, Keywords, Conversion tracking", price: "Consultar" },
+    { icon: "BarChart3", name: "Dashboard Analytics", desc: "Leads, ventas, alcance, conversiones, campañas", price: "Consultar" },
+    { icon: "Users", name: "CRM + Pipeline", desc: "Sistema de seguimiento de clientes", price: "Consultar" },
+    { icon: "Mail", name: "Email Marketing", desc: "Flujos automáticos, Recuperación de leads, Remarketing", price: "Consultar" }
   ]
 };
 
