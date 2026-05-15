@@ -1,0 +1,166 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-neon: var(--neon);
+  --color-neon-glow: var(--neon-glow);
+  --color-gold: var(--gold);
+  --color-gold-glow: var(--gold-glow);
+  --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 3s ease-in-out infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-grid: grid 20s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes grid {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(40px); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.10 0.03 250);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.14 0.035 250);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.14 0.035 250);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.74 0.17 240);
+  --primary-foreground: oklch(0.10 0.03 250);
+  --secondary: oklch(0.20 0.04 250);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.18 0.035 250);
+  --muted-foreground: oklch(0.68 0.04 240);
+  --accent: oklch(0.86 0.18 90);
+  --accent-foreground: oklch(0.10 0.03 250);
+  --destructive: oklch(0.65 0.25 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.74 0.17 240);
+  --neon: oklch(0.74 0.17 240);
+  --neon-glow: oklch(0.74 0.17 240 / 0.55);
+  --gold: oklch(0.86 0.18 90);
+  --gold-glow: oklch(0.86 0.18 90 / 0.55);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.025em; font-weight: 600; }
+  body { font-size: 15px; line-height: 1.6; }
+}
+
+@layer utilities {
+  .glass {
+    background: color-mix(in oklab, var(--card) 60%, transparent);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid color-mix(in oklab, white 8%, transparent);
+  }
+  .glass-strong {
+    background: color-mix(in oklab, var(--card) 80%, transparent);
+    backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid color-mix(in oklab, white 10%, transparent);
+  }
+  .neon-text {
+    color: var(--neon);
+    text-shadow: 0 0 20px var(--neon-glow), 0 0 40px var(--neon-glow);
+  }
+  .neon-border {
+    border: 1px solid var(--neon);
+    box-shadow: 0 0 20px var(--neon-glow), inset 0 0 20px color-mix(in oklab, var(--neon) 10%, transparent);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, oklch(0.98 0 0), oklch(0.74 0.17 240) 40%, oklch(0.86 0.18 90) 75%, oklch(0.92 0.16 95));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, color-mix(in oklab, var(--neon) 60%, transparent), transparent 50%, color-mix(in oklab, var(--neon) 30%, transparent));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, white 4%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, white 4%, transparent) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .radial-fade {
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  }
+  .glow-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out both;
+  }
+}
