@@ -18,7 +18,8 @@ import {
   Search,
   BarChart3,
   Mail,
-  Play
+  Play,
+  CalendarDays
 } from 'lucide-react';
 
 const translations = {
@@ -79,7 +80,10 @@ const translations = {
     pricingMetrics: "Key Metrics:",
     pricingSuggest: "Suggested Price:",
     upsellsTitle: "🧩 Modular Services (Upsells)",
-    upsellsDesc: "Here is where the magic happens. Enhance your strategy with these powerful add-ons."
+    upsellsDesc: "Here is where the magic happens. Enhance your strategy with these powerful add-ons.",
+    scheduleTitle: "Schedule a Discovery Call",
+    scheduleDesc: "Choose a time that works for you to discuss how we can help your business evolve.",
+    scheduleBtn: "Book via Google Calendar"
   },
   es: {
     navHome: "Inicio",
@@ -138,7 +142,10 @@ const translations = {
     pricingMetrics: "Métricas:",
     pricingSuggest: "Precio sugerido:",
     upsellsTitle: "🧩 Servicios Modulares (Upsells)",
-    upsellsDesc: "Acá está la magia. Potencia tu estrategia con estos módulos adicionales."
+    upsellsDesc: "Acá está la magia. Potencia tu estrategia con estos módulos adicionales.",
+    scheduleTitle: "Agendar una Reunión",
+    scheduleDesc: "Elige un horario que te convenga para hablar sobre cómo podemos ayudar a que tu negocio crezca.",
+    scheduleBtn: "Agendar en Google Calendar"
   }
 };
 
@@ -488,6 +495,25 @@ function App() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Schedule Meeting Section */}
+          <div className="schedule-container" style={{ marginTop: '4rem', textAlign: 'center', padding: '4rem 2rem', background: 'rgba(15, 22, 35, 0.6)', borderRadius: '32px', border: '1px solid var(--border-color)', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle at center, rgba(0, 195, 255, 0.05) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
+            <div className="section-header" style={{ marginBottom: '2.5rem', position: 'relative', zIndex: 1 }}>
+              <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--text-main)' }}>{t.scheduleTitle}</h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>{t.scheduleDesc}</p>
+            </div>
+            
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <a href="https://calendar.google.com/calendar/appointments/schedules/tu-enlace-aqui" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', gap: '12px', borderRadius: '50px' }}>
+                <CalendarDays size={24} />
+                {t.scheduleBtn}
+              </a>
+              <p style={{ marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+                {lang === 'es' ? 'Serás redirigido a nuestra página de reservas de Google Calendar.' : 'You will be redirected to our Google Calendar booking page.'}
+              </p>
             </div>
           </div>
         </div>
