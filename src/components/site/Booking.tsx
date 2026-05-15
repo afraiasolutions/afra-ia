@@ -9,11 +9,26 @@ export function Booking() {
 
   return (
     <section id="booking" className="relative py-32">
-      <div className="glow-orb -z-10" style={{ width: 600, height: 600, background: "var(--gold)", top: "10%", left: "50%", transform: "translateX(-50%)", opacity: 0.18 }} />
+      <div
+        className="glow-orb -z-10"
+        style={{
+          width: 600,
+          height: 600,
+          background: "var(--gold)",
+          top: "10%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          opacity: 0.18,
+        }}
+      />
       <div className="mx-auto max-w-7xl px-4">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="text-xs uppercase tracking-widest text-gold mb-3">{t.booking.eyebrow}</div>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">{t.booking.title}</h2>
+          <div className="text-xs uppercase tracking-widest text-gold mb-3">
+            {t.booking.eyebrow}
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">
+            {t.booking.title}
+          </h2>
           <p className="mt-4 text-muted-foreground">{t.booking.subtitle}</p>
         </div>
 

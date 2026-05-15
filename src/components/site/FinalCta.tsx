@@ -9,7 +9,18 @@ export function FinalCta() {
     <section className="relative py-32">
       <div className="mx-auto max-w-5xl px-4">
         <div className="relative rounded-3xl glass-strong p-12 md:p-20 text-center overflow-hidden gradient-border">
-          <div className="glow-orb" style={{ width: 600, height: 600, background: "var(--neon)", top: "-50%", left: "50%", transform: "translateX(-50%)", opacity: 0.25 }} />
+          <div
+            className="glow-orb"
+            style={{
+              width: 600,
+              height: 600,
+              background: "var(--neon)",
+              top: "-50%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              opacity: 0.25,
+            }}
+          />
           <div className="relative">
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight">
               <span className="gradient-text">{t.finalCta.title}</span>

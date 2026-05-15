@@ -73,22 +73,45 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Lovable App" },
-      { name: "description", content: "AFRA AI Growth Engine crafts premium websites for AI-powered digital marketing agencies." },
+      {
+        name: "description",
+        content:
+          "AFRA AI Growth Engine crafts premium websites for AI-powered digital marketing agencies.",
+      },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "AFRA AI Growth Engine crafts premium websites for AI-powered digital marketing agencies." },
+      {
+        property: "og:description",
+        content:
+          "AFRA AI Growth Engine crafts premium websites for AI-powered digital marketing agencies.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "AFRA AI Growth Engine crafts premium websites for AI-powered digital marketing agencies." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/564576d4-31a9-4dbb-b99a-3abfbfa79603/id-preview-980ab7c8--74c75e31-88b3-4716-afe7-0ef679caa577.lovable.app-1778856509327.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/564576d4-31a9-4dbb-b99a-3abfbfa79603/id-preview-980ab7c8--74c75e31-88b3-4716-afe7-0ef679caa577.lovable.app-1778856509327.png" },
+      {
+        name: "twitter:description",
+        content:
+          "AFRA AI Growth Engine crafts premium websites for AI-powered digital marketing agencies.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/564576d4-31a9-4dbb-b99a-3abfbfa79603/id-preview-980ab7c8--74c75e31-88b3-4716-afe7-0ef679caa577.lovable.app-1778856509327.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/564576d4-31a9-4dbb-b99a-3abfbfa79603/id-preview-980ab7c8--74c75e31-88b3-4716-afe7-0ef679caa577.lovable.app-1778856509327.png",
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap",
+      },
       { rel: "stylesheet", href: appCss },
     ],
   }),

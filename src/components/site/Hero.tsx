@@ -9,9 +9,32 @@ export function Hero() {
     <section id="top" className="relative min-h-screen pt-32 pb-20 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 grid-bg radial-fade -z-10" />
-      <div className="glow-orb -z-10" style={{ width: 500, height: 500, background: "var(--neon)", top: -100, left: "20%" }} />
-      <div className="glow-orb -z-10" style={{ width: 420, height: 420, background: "var(--gold)", top: 80, right: "12%", opacity: 0.45 }} />
-      <div className="glow-orb -z-10" style={{ width: 400, height: 400, background: "oklch(0.5 0.2 240)", bottom: -100, right: "10%", opacity: 0.4 }} />
+      <div
+        className="glow-orb -z-10"
+        style={{ width: 500, height: 500, background: "var(--neon)", top: -100, left: "20%" }}
+      />
+      <div
+        className="glow-orb -z-10"
+        style={{
+          width: 420,
+          height: 420,
+          background: "var(--gold)",
+          top: 80,
+          right: "12%",
+          opacity: 0.45,
+        }}
+      />
+      <div
+        className="glow-orb -z-10"
+        style={{
+          width: 400,
+          height: 400,
+          background: "oklch(0.5 0.2 240)",
+          bottom: -100,
+          right: "10%",
+          opacity: 0.4,
+        }}
+      />
 
       <div className="mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-4xl text-center animate-fade-up">
@@ -24,9 +47,7 @@ export function Hero() {
           </div>
 
           <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.05] tracking-tight">
-            {t.hero.title1}{" "}
-            <span className="gradient-text">{t.hero.title2}</span>{" "}
-            {t.hero.title3}
+            {t.hero.title1} <span className="gradient-text">{t.hero.title2}</span> {t.hero.title3}
           </h1>
 
           <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
@@ -53,7 +74,10 @@ export function Hero() {
           <div className="mt-8 text-xs text-muted-foreground flex items-center justify-center gap-2">
             <div className="flex -space-x-2">
               {[0, 1, 2, 3].map((i) => (
-                <div key={i} className="h-6 w-6 rounded-full bg-gradient-to-br from-neon/60 to-neon/20 ring-2 ring-background" />
+                <div
+                  key={i}
+                  className="h-6 w-6 rounded-full bg-gradient-to-br from-neon/60 to-neon/20 ring-2 ring-background"
+                />
               ))}
             </div>
             {t.hero.proof}
@@ -61,7 +85,10 @@ export function Hero() {
         </div>
 
         {/* Dashboard mockup */}
-        <div className="relative mt-20 max-w-5xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
+        <div
+          className="relative mt-20 max-w-5xl mx-auto animate-fade-up"
+          style={{ animationDelay: "0.2s" }}
+        >
           <div className="absolute -inset-4 bg-gradient-to-r from-neon/20 via-transparent to-neon/20 rounded-3xl blur-2xl" />
           <div className="relative glass-strong rounded-2xl p-6 gradient-border">
             <div className="flex items-center justify-between mb-6">
@@ -96,8 +123,16 @@ export function Hero() {
                     <stop offset="100%" stopColor="oklch(0.80 0.15 80)" stopOpacity="0" />
                   </linearGradient>
                 </defs>
-                <path d="M0,120 C40,100 80,90 120,70 C160,50 200,80 240,55 C280,30 320,40 360,20 L400,15 L400,150 L0,150 Z" fill="url(#g)" />
-                <path d="M0,120 C40,100 80,90 120,70 C160,50 200,80 240,55 C280,30 320,40 360,20 L400,15" fill="none" stroke="oklch(0.80 0.15 80)" strokeWidth="2" />
+                <path
+                  d="M0,120 C40,100 80,90 120,70 C160,50 200,80 240,55 C280,30 320,40 360,20 L400,15 L400,150 L0,150 Z"
+                  fill="url(#g)"
+                />
+                <path
+                  d="M0,120 C40,100 80,90 120,70 C160,50 200,80 240,55 C280,30 320,40 360,20 L400,15"
+                  fill="none"
+                  stroke="oklch(0.80 0.15 80)"
+                  strokeWidth="2"
+                />
               </svg>
             </div>
           </div>
@@ -112,7 +147,10 @@ export function Hero() {
               <div className="text-xs text-muted-foreground">3 leads qualified · just now</div>
             </div>
           </div>
-          <div className="absolute -right-4 md:-right-12 bottom-12 hidden md:block animate-float" style={{ animationDelay: "1.5s" }}>
+          <div
+            className="absolute -right-4 md:-right-12 bottom-12 hidden md:block animate-float"
+            style={{ animationDelay: "1.5s" }}
+          >
             <div className="glass-strong rounded-xl p-3 w-52 gradient-border">
               <div className="text-xs text-muted-foreground">Conversion rate</div>
               <div className="text-lg font-display font-bold text-neon">+127%</div>

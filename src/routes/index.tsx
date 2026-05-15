@@ -17,14 +17,25 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "AFRA IA Marketing — AI-Powered Growth Systems" },
-      { name: "description", content: "Turn your business into a client acquisition machine with AI. Content, funnels, automation, paid ads and neuro-marketing for ambitious brands." },
+      {
+        name: "description",
+        content:
+          "Turn your business into a client acquisition machine with AI. Content, funnels, automation, paid ads and neuro-marketing for ambitious brands.",
+      },
       { property: "og:title", content: "AFRA IA Marketing — AI-Powered Growth Systems" },
-      { property: "og:description", content: "AI, content, funnels, automation and paid ads to scale your brand faster and smarter." },
+      {
+        property: "og:description",
+        content:
+          "AI, content, funnels, automation and paid ads to scale your brand faster and smarter.",
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
+      },
     ],
   }),
   component: Index,

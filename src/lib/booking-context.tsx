@@ -1,6 +1,10 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 
-const Ctx = createContext<{ open: boolean; setOpen: (v: boolean) => void; openBooking: () => void }>({
+const Ctx = createContext<{
+  open: boolean;
+  setOpen: (v: boolean) => void;
+  openBooking: () => void;
+}>({
   open: false,
   setOpen: () => {},
   openBooking: () => {},

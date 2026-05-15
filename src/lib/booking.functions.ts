@@ -30,16 +30,24 @@ function zonedToUtc(year: number, month: number, day: number, hour: number, minu
   const dtf = new Intl.DateTimeFormat("en-US", {
     timeZone: AGENCY_TZ,
     hour12: false,
-    year: "numeric", month: "2-digit", day: "2-digit",
-    hour: "2-digit", minute: "2-digit", second: "2-digit",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
   });
   const parts = dtf.formatToParts(new Date(utcGuess)).reduce<Record<string, string>>((a, p) => {
     if (p.type !== "literal") a[p.type] = p.value;
     return a;
   }, {});
   const asUtc = Date.UTC(
-    +parts.year, +parts.month - 1, +parts.day,
-    +parts.hour, +parts.minute, +parts.second,
+    +parts.year,
+    +parts.month - 1,
+    +parts.day,
+    +parts.hour,
+    +parts.minute,
+    +parts.second,
   );
   const offset = asUtc - utcGuess;
   return new Date(utcGuess - offset);
@@ -89,12 +97,18 @@ export const getAvailableSlots = createServerFn({ method: "POST" })
       // Get y/m/d in AGENCY_TZ for this probe
       const parts = new Intl.DateTimeFormat("en-CA", {
         timeZone: AGENCY_TZ,
-        year: "numeric", month: "2-digit", day: "2-digit",
-      }).formatToParts(probe).reduce<Record<string, string>>((a, p) => {
-        if (p.type !== "literal") a[p.type] = p.value;
-        return a;
-      }, {});
-      const y = +parts.year, m = +parts.month, d = +parts.day;
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      })
+        .formatToParts(probe)
+        .reduce<Record<string, string>>((a, p) => {
+          if (p.type !== "literal") a[p.type] = p.value;
+          return a;
+        }, {});
+      const y = +parts.year,
+        m = +parts.month,
+        d = +parts.day;
       const dayStartUtc = zonedToUtc(y, m, d, WORK_START_HOUR, 0);
       const dow = dayOfWeekInTz(dayStartUtc);
       if (dow === 0 || dow === 6) continue; // weekends off

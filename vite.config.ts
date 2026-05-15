@@ -9,7 +9,5 @@ import netlify from "@netlify/vite-plugin-tanstack-start";
 
 export default defineConfig({
   cloudflare: false,
-  plugins: [
-    netlify()
-  ]
+  plugins: [netlify()],
 });

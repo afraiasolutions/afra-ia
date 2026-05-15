@@ -6,11 +6,25 @@ export function Results() {
   const bars = [40, 65, 50, 78, 62, 88, 72, 95];
   return (
     <section id="results" className="relative py-32">
-      <div className="glow-orb -z-10" style={{ width: 700, height: 700, background: "var(--neon)", top: "30%", right: "-20%", opacity: 0.12 }} />
+      <div
+        className="glow-orb -z-10"
+        style={{
+          width: 700,
+          height: 700,
+          background: "var(--neon)",
+          top: "30%",
+          right: "-20%",
+          opacity: 0.12,
+        }}
+      />
       <div className="mx-auto max-w-7xl px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="text-xs uppercase tracking-widest text-neon mb-3">{t.results.eyebrow}</div>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">{t.results.title}</h2>
+          <div className="text-xs uppercase tracking-widest text-neon mb-3">
+            {t.results.eyebrow}
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">
+            {t.results.title}
+          </h2>
           <p className="mt-4 text-muted-foreground">{t.results.subtitle}</p>
         </div>
 
@@ -44,10 +58,25 @@ export function Results() {
                   </linearGradient>
                 </defs>
                 {[0, 1, 2, 3].map((i) => (
-                  <line key={i} x1="0" y1={60 * i + 30} x2="600" y2={60 * i + 30} stroke="oklch(1 0 0 / 0.05)" />
+                  <line
+                    key={i}
+                    x1="0"
+                    y1={60 * i + 30}
+                    x2="600"
+                    y2={60 * i + 30}
+                    stroke="oklch(1 0 0 / 0.05)"
+                  />
                 ))}
-                <path d="M0,200 C60,180 120,150 180,120 C240,90 300,140 360,90 C420,40 480,70 540,30 L600,20 L600,240 L0,240 Z" fill="url(#rg)" />
-                <path d="M0,200 C60,180 120,150 180,120 C240,90 300,140 360,90 C420,40 480,70 540,30 L600,20" fill="none" stroke="oklch(0.80 0.15 80)" strokeWidth="2.5" />
+                <path
+                  d="M0,200 C60,180 120,150 180,120 C240,90 300,140 360,90 C420,40 480,70 540,30 L600,20 L600,240 L0,240 Z"
+                  fill="url(#rg)"
+                />
+                <path
+                  d="M0,200 C60,180 120,150 180,120 C240,90 300,140 360,90 C420,40 480,70 540,30 L600,20"
+                  fill="none"
+                  stroke="oklch(0.80 0.15 80)"
+                  strokeWidth="2.5"
+                />
               </svg>
             </div>
             <div className="space-y-3">
@@ -55,11 +84,16 @@ export function Results() {
               {bars.slice(0, 5).map((w, i) => (
                 <div key={i} className="space-y-1">
                   <div className="flex justify-between text-xs">
-                    <span className="text-muted-foreground">{["Meta", "Google", "Organic", "Email", "WhatsApp"][i]}</span>
+                    <span className="text-muted-foreground">
+                      {["Meta", "Google", "Organic", "Email", "WhatsApp"][i]}
+                    </span>
                     <span className="text-foreground">{w}%</span>
                   </div>
                   <div className="h-1.5 rounded-full bg-card overflow-hidden">
-                    <div className="h-full rounded-full bg-gradient-to-r from-neon/60 to-neon" style={{ width: `${w}%` }} />
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-neon/60 to-neon"
+                      style={{ width: `${w}%` }}
+                    />
                   </div>
                 </div>
               ))}

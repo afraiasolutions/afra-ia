@@ -9,8 +9,12 @@ export function Pricing() {
     <section id="pricing" className="relative py-32">
       <div className="mx-auto max-w-7xl px-4">
         <div className="text-center max-w-2xl mx-auto">
-          <div className="text-xs uppercase tracking-widest text-neon mb-3">{t.pricing.eyebrow}</div>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">{t.pricing.title}</h2>
+          <div className="text-xs uppercase tracking-widest text-neon mb-3">
+            {t.pricing.eyebrow}
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">
+            {t.pricing.title}
+          </h2>
           <p className="mt-4 text-muted-foreground">{t.pricing.subtitle}</p>
         </div>
 
@@ -21,9 +25,7 @@ export function Pricing() {
               <div
                 key={i}
                 className={`relative rounded-3xl p-8 transition-all hover:-translate-y-1 ${
-                  popular
-                    ? "glass-strong neon-border scale-[1.02]"
-                    : "glass gradient-border"
+                  popular ? "glass-strong neon-border scale-[1.02]" : "glass gradient-border"
                 }`}
               >
                 {popular && (

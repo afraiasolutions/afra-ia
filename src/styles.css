@@ -42,42 +42,66 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 @keyframes glow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 @keyframes grid {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(40px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(40px);
+  }
 }
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.10 0.03 250);
+  --background: oklch(0.1 0.03 250);
   --foreground: oklch(0.98 0 0);
   --card: oklch(0.14 0.035 250);
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.14 0.035 250);
   --popover-foreground: oklch(0.98 0 0);
   --primary: oklch(0.74 0.17 240);
-  --primary-foreground: oklch(0.10 0.03 250);
-  --secondary: oklch(0.20 0.04 250);
+  --primary-foreground: oklch(0.1 0.03 250);
+  --secondary: oklch(0.2 0.04 250);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.18 0.035 250);
   --muted-foreground: oklch(0.68 0.04 240);
   --accent: oklch(0.86 0.18 90);
-  --accent-foreground: oklch(0.10 0.03 250);
+  --accent-foreground: oklch(0.1 0.03 250);
   --destructive: oklch(0.65 0.25 25);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(1 0 0 / 8%);
@@ -90,8 +114,12 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -99,8 +127,18 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.025em; font-weight: 600; }
-  body { font-size: 15px; line-height: 1.6; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
 }
 
 @layer utilities {
@@ -117,14 +155,24 @@
   }
   .neon-text {
     color: var(--neon);
-    text-shadow: 0 0 20px var(--neon-glow), 0 0 40px var(--neon-glow);
+    text-shadow:
+      0 0 20px var(--neon-glow),
+      0 0 40px var(--neon-glow);
   }
   .neon-border {
     border: 1px solid var(--neon);
-    box-shadow: 0 0 20px var(--neon-glow), inset 0 0 20px color-mix(in oklab, var(--neon) 10%, transparent);
+    box-shadow:
+      0 0 20px var(--neon-glow),
+      inset 0 0 20px color-mix(in oklab, var(--neon) 10%, transparent);
   }
   .gradient-text {
-    background: linear-gradient(135deg, oklch(0.98 0 0), oklch(0.74 0.17 240) 40%, oklch(0.86 0.18 90) 75%, oklch(0.92 0.16 95));
+    background: linear-gradient(
+      135deg,
+      oklch(0.98 0 0),
+      oklch(0.74 0.17 240) 40%,
+      oklch(0.86 0.18 90) 75%,
+      oklch(0.92 0.16 95)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -138,8 +186,15 @@
     inset: 0;
     padding: 1px;
     border-radius: inherit;
-    background: linear-gradient(135deg, color-mix(in oklab, var(--neon) 60%, transparent), transparent 50%, color-mix(in oklab, var(--neon) 30%, transparent));
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--neon) 60%, transparent),
+      transparent 50%,
+      color-mix(in oklab, var(--neon) 30%, transparent)
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;

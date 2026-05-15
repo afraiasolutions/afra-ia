@@ -23,12 +23,25 @@ export function Navbar() {
   ];
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}
+    >
       <div className="mx-auto max-w-7xl px-4">
-        <nav className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all ${scrolled ? "glass-strong" : ""}`}>
-          <a href="#top" className="flex items-center gap-2.5 font-display font-bold tracking-tight">
-            <img src={logo} alt="AFRA IA Marketing" className="h-10 w-10 rounded-full ring-1 ring-neon/40 shadow-[0_0_20px_var(--neon-glow)]" />
-            <span className="text-base sm:text-lg">AFRA<span className="text-neon"> IA</span></span>
+        <nav
+          className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all ${scrolled ? "glass-strong" : ""}`}
+        >
+          <a
+            href="#top"
+            className="flex items-center gap-2.5 font-display font-bold tracking-tight"
+          >
+            <img
+              src={logo}
+              alt="AFRA IA Marketing"
+              className="h-10 w-10 rounded-full ring-1 ring-neon/40 shadow-[0_0_20px_var(--neon-glow)]"
+            />
+            <span className="text-base sm:text-lg">
+              AFRA<span className="text-neon"> IA</span>
+            </span>
           </a>
 
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">

@@ -1,21 +1,69 @@
 import { useI18n } from "@/lib/i18n";
 import {
-  Video, Wand2, LayoutTemplate, Megaphone, Search, Database,
-  MessageCircle, Filter, BarChart3, Rocket, Mail, Mic, ArrowUpRight,
+  Video,
+  Wand2,
+  LayoutTemplate,
+  Megaphone,
+  Search,
+  Database,
+  MessageCircle,
+  Filter,
+  BarChart3,
+  Rocket,
+  Mail,
+  Mic,
+  ArrowUpRight,
 } from "lucide-react";
 
-const icons = [Video, Wand2, LayoutTemplate, Megaphone, Search, Database, MessageCircle, Filter, BarChart3, Rocket, Mail, Mic];
+const icons = [
+  Video,
+  Wand2,
+  LayoutTemplate,
+  Megaphone,
+  Search,
+  Database,
+  MessageCircle,
+  Filter,
+  BarChart3,
+  Rocket,
+  Mail,
+  Mic,
+];
 
 export function Services() {
   const { t } = useI18n();
   return (
     <section id="services" className="relative py-32">
-      <div className="glow-orb -z-10" style={{ width: 500, height: 500, background: "var(--gold)", top: "25%", right: "-8%", opacity: 0.18 }} />
-      <div className="glow-orb -z-10" style={{ width: 400, height: 400, background: "var(--neon)", top: "10%", left: "-10%", opacity: 0.12 }} />
+      <div
+        className="glow-orb -z-10"
+        style={{
+          width: 500,
+          height: 500,
+          background: "var(--gold)",
+          top: "25%",
+          right: "-8%",
+          opacity: 0.18,
+        }}
+      />
+      <div
+        className="glow-orb -z-10"
+        style={{
+          width: 400,
+          height: 400,
+          background: "var(--neon)",
+          top: "10%",
+          left: "-10%",
+          opacity: 0.12,
+        }}
+      />
       <div className="mx-auto max-w-7xl px-4">
         <div className="max-w-2xl">
-          <div className="text-xs uppercase tracking-widest text-gold mb-3">{t.services.eyebrow}</div>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">{t.services.title}</h2>
+          <div className="text-xs uppercase tracking-widest text-gold mb-3">
+            {t.services.eyebrow}
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">
+            {t.services.title}
+          </h2>
           <p className="mt-4 text-muted-foreground">{t.services.subtitle}</p>
         </div>
 
